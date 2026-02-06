@@ -1,6 +1,9 @@
 // PascalCase
 // App
 
+import './styles/theme.css';
+import './styles/global.css';
+
 export function App() {
   console.log('Oi');
 
