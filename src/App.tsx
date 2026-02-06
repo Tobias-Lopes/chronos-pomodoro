@@ -1,6 +1,8 @@
 // PascalCase
 // App
 
+import { Heading } from './components/Heading';
+
 import './styles/theme.css';
 import './styles/global.css';
 
@@ -9,7 +11,7 @@ export function App() {
 
   return (
     <>
-      <h1>Olá mundo!</h1>
+      <Heading />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quae neque
         minima? Blanditiis, non ea, atque est vero quia eos, asperiores maxime
