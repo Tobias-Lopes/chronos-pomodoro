@@ -1,8 +1,8 @@
-import './styles/theme.css';
-import './styles/global.css';
-
+import { useState } from 'react';
 import { Container } from './components/Container';
 import { Logo } from './components/Logo';
+import './styles/theme.css';
+import './styles/global.css';
 import { Menu } from './components/Menu';
 import { CountDown } from './components/CountDown';
 import { DefaultInput } from './components/DefaultInput';
@@ -10,10 +10,25 @@ import { Cycles } from './components/Cycles';
 import { DefaultButton } from './components/DefaultButton';
 import { PlayCircleIcon } from 'lucide-react';
 import { Footer } from './components/Footer';
+import { Heading } from './components/Heading';
 
 export function App() {
+  // Todos os componentes que usam "Numero" saibam das mudanças em seu valor
+
+  // Sempre que usar useState, não vou usar atribuição diretamente
+  const [numero, setNumero] = useState(0);
+
+  function handleCkick() {
+    setNumero((prevState) => prevState + 100);
+  }
+
   return (
     <>
+      <Heading>
+        Número: <span>{numero}</span>
+      </Heading>
+      <button onClick={handleCkick}>Aumenta</button>
+
       <Container>
         <Logo />
       </Container>
@@ -32,7 +47,7 @@ export function App() {
             <DefaultInput
               id='meuInput'
               type='text'
-              labelText='Tarefa'
+              labelText={numero.toString()}
               placeholder='Digite algo'
             />
           </div>
